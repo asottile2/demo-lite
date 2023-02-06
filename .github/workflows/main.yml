@@ -12,5 +12,5 @@ jobs:
       with:
         python-version: 3.x
     - uses: pre-commit/action@v3.0.0
-    - uses: pre-commit-ci/lite-action@v0.0.2
+    - uses: pre-commit-ci/lite-action@main
       if: always()
