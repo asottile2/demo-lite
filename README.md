@@ -1,5 +1,5 @@
 hello from REAMDE
 
-trailing ws  
+trailing ws
 
 hi
