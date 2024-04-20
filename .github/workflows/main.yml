@@ -1,13 +1,27 @@
 on:
+  issue_comment:
   pull_request:
   push:
     branches: [main, test-me-*]
 
 jobs:
   main:
+    if: | 
+      github.event == 'push' ||
+      github.event == 'pull_request' || (
+        github.event.issue.pull_request &&
+        contains(github.event.comment.body, 'pre-commit.ci lite autofix')
+      )
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+      with:
+        ref: |
+          ${{
+              github.event == 'issue_comment' &&
+                  format('refs/pull/{0}/merge', github.event.issue.number) ||
+                  ''
+          }}
     - uses: actions/setup-python@v4
       with:
         python-version: 3.x
