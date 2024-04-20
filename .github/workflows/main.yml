@@ -7,8 +7,8 @@ on:
 jobs:
   main:
     if: | 
-      github.event == 'push' ||
-      github.event == 'pull_request' || (
+      github.event_name == 'push' ||
+      github.event_name == 'pull_request' || (
         github.event.issue.pull_request &&
         contains(github.event.comment.body, 'pre-commit.ci lite autofix')
       )
@@ -18,7 +18,7 @@ jobs:
       with:
         ref: |
           ${{
-              github.event == 'issue_comment' &&
+              github.event_name == 'issue_comment' &&
                   format('refs/pull/{0}/merge', github.event.issue.number) ||
                   ''
           }}
