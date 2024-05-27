@@ -1,2 +1,2 @@
 thing = 'world'
-print('hello {}'.format(world))
+print(f'hello {world}')
