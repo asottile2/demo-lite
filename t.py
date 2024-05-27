@@ -1,2 +1,2 @@
 thing = 'world'
-print('hello %s' % (world,))
+print('hello {}'.format(world))
