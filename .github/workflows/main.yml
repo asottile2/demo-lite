@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - run: gh pr edit --remove-label 'pre-commit ci run'
+      if: github.event.action == 'labeled' && github.event.label.name == 'pre-commit ci run'
     - uses: actions/setup-python@v4
       with:
         python-version: 3.x
