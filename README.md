@@ -1,2 +1,2 @@
 # demo-lite
-for testing pre-commit-ci lite dev instance    
+for testing pre-commit-ci lite dev instance
