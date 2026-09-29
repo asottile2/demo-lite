@@ -1,2 +1,5 @@
-# demo-lite
-for testing pre-commit-ci lite dev instance
+hello from REAMDE
+
+trailing ws  
+
+hi
